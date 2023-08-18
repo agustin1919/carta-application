@@ -1,0 +1,5 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb+srv://facundosouyaux:1r12huw536aK419q@cluster0.or4q5o8.mongodb.net/?retryWrites=true&w=majority
+      database: Carta
