@@ -3,3 +3,12 @@ spring:
     mongodb:
       uri: mongodb+srv://facundosouyaux:1r12huw536aK419q@cluster0.or4q5o8.mongodb.net/?retryWrites=true&w=majority
       database: Carta
+
+#server:
+#  port: 443
+#  ssl:
+#    enabled: true
+#    key-store-type: PKCS12
+#    key-store: classpath:my-keystore.p12
+#    key-store-password: facussl
+#    key-alias: spring-f-https
