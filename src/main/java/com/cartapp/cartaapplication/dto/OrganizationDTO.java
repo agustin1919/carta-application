@@ -16,4 +16,5 @@ public class OrganizationDTO {
     private String theme;
 
     private String logoUrl;
+
 }

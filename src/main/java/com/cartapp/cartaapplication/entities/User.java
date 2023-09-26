@@ -3,6 +3,7 @@ package com.cartapp.cartaapplication.entities;
 
 import lombok.*;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection="users")
@@ -19,5 +20,6 @@ public class User {
 
     private String userName;
 
-    private String organizationId;
+    @DBRef
+    private Organization organization;
 }

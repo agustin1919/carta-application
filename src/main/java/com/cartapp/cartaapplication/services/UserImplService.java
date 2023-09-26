@@ -1,7 +1,9 @@
 package com.cartapp.cartaapplication.services;
 
 import com.cartapp.cartaapplication.dto.UserDTO;
+import com.cartapp.cartaapplication.entities.Organization;
 import com.cartapp.cartaapplication.entities.User;
+import com.cartapp.cartaapplication.repositories.OrganizationRepository;
 import com.cartapp.cartaapplication.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -17,16 +19,21 @@ public class UserImplService implements UserService{
     @Autowired
     UserRepository userRepository;
 
+    @Autowired
+    OrganizationRepository organizationRepository;
+
     public ResponseEntity<String> createUser(UserDTO userDTO){
         if(userRepository.existsByUserName(userDTO.getUserName())){
             return new ResponseEntity<>("Error, ese usuario ya existe",HttpStatus.BAD_REQUEST);
         } else {
             User user = new User();
             user.setId(UUID.randomUUID().toString().split("-")[0]);
+            // organization.setId(UUID.randomUUID().toString().split("-")[0]);
             user.setName(userDTO.getName());
             user.setLastName(userDTO.getLastName());
             user.setUserName(userDTO.getUserName());
-            user.setOrganizationId(userDTO.getOrganizationId());
+            Organization organization = organizationRepository.findByIdContaining(userDTO.getOrganizationId());
+            user.setOrganization(organization);
             userRepository.save(user);
             return new ResponseEntity<>("Usuario creado", HttpStatus.OK);
         }
@@ -57,7 +64,6 @@ public class UserImplService implements UserService{
             user.setName(userDTO.getName());
             user.setLastName(userDTO.getLastName());
             user.setUserName(userDTO.getUserName());
-            user.setOrganizationId(userDTO.getOrganizationId());
             userRepository.save(user);
             return new ResponseEntity<>("Usuario actualizado correctamente", HttpStatus.OK);
         } else {
