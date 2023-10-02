@@ -42,7 +42,8 @@ Repository's main points:
 1- When i make another CRUD, i create a new branch and then i do a merge to test.
 2- Design Patterns in this applications are dto and services implements, ej: interface "UserService" that is implemented by "UserImplService" where i write all the logic code.
 The idea of this is to avoid writing logic code in the controller.
-basic ej:
+basic E.g:
+
 UserController:
 
 private UserService userService
@@ -58,12 +59,17 @@ ResponseEntity<List<User>> findAllUsers();
 UserImplService:
 
 @Autowired
+
 UserRepository userRepository;
 
 public ResponseEntity<List<User>> findAllUsers(){
+
   List<User> users = userRepository.findAll();
+  
   return ResponseEntity.ok(users);
+  
 }
+
 3- For good practices, all methods return an http response, all of them return a ResponseEntity.
 4- The DataBase is working perfectly in the cloud MongoDB Atlas.
 5- The other design pattern is "DTO" Data Transfer Object, i use it specifically to prevent any user to get sensitive information of another user (like Id, in other cases Adress 
