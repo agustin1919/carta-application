@@ -71,9 +71,14 @@ public ResponseEntity<List<User>> findAllUsers(){
 }
 
 3- For good practices, all methods return an http response, all of them return a ResponseEntity.
+
 4- The DataBase is working perfectly in the cloud MongoDB Atlas.
+
 5- The other design pattern is "DTO" Data Transfer Object, i use it specifically to prevent any user to get sensitive information of another user (like Id, in other cases Adress 
 maybe). That is posible because the method return an UserDTO and not an User.
+
 6- until now i've made User and Organization entities, those have a relation made with DBRef.
+
 7- The only push i've done to master, is UserCRUD (version 1).
+
 # carta-application
