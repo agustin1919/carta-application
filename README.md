@@ -1,5 +1,5 @@
-                                        |-----------------------------------Spanish-----------------------------------|
-Claves de este repositorio:
+                                |-----------------------------------Spanish-----------------------------------|
+Puntos claves de este repositorio:
 1- El unico push en la rama master es la de la entidad user y su controller, service, implementación del servicio(userImplService), repository y su respectivo dto.
 2- Cuando hago un nuevo crud creo una nueva rama y despues hago un merge a la rama test.
 3- Los patrones de diseño que uso son los adquiridos con la experiencia laboral (adaptandome rapidamente al patron de diseño de la empresa en la que estaba).
@@ -36,8 +36,8 @@ no un "User", ya que User posee datos sensibles como el Id (o en otras ocasiones
 7- Hasta ahora tengo hecho hasta la entidad Organization el cual tiene relación con Users con DBRef(DataBase Reference).
 
 
-                                        |-----------------------------------English-----------------------------------|
-Key Points in this repository:
+                                |-----------------------------------English-----------------------------------|
+Repository's main points:
 
 1- When i make another CRUD, i create a new branch and then i do a merge to test.
 2- Design Patterns in this applications are dto and services implements, ej: interface "UserService" that is implemented by "UserImplService" where i write all the logic code.
